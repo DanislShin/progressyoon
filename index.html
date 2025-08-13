@@ -3,218 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>베스티온 - 학생 학업 진행 상황 (허 윤) - 영어 6월 2일</title>
+    <title>베스티온 - 학생 학업 진행 상황 (허윤) - 영어 8월 13일</title>
     <style>
       body {
         font-family: "Segoe UI", Arial, sans-serif;
-        margin: 20px;
-        background-color: #f5f7f1;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      h1 {
-        text-align: center;
-        color: #ff6f61;
-        font-size: 28px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-      }
-      table {
+
+      .notification-container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
         width: 90%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-      th,
-      td {
-        padding: 12px;
         text-align: center;
-        border: 1px solid #e8ece4;
+        animation: fadeIn 0.8s ease-out;
       }
-      th {
-        background-color: #a8d5ba;
-        color: #fff;
-        font-weight: bold;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      tr:nth-child(even) {
-        background-color: #f9f9f5;
+
+      .icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
       }
-      .category {
-        cursor: pointer;
-        background-color: #fef6e4;
-        transition: background-color 0.3s;
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
       }
-      .category:hover {
-        background-color: #ffe4e1;
+
+      h1 {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 30px;
+        font-weight: 600;
       }
-      .details {
-        display: none;
-        background-color: #fffdf7;
+
+      .message {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 20px 0;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .highlight {
+        color: #e74c3c;
+        font-weight: 600;
+      }
+
+      .contact-info {
+        background: #f8f9ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        border-left: 4px solid #667eea;
         text-align: left;
       }
-      .sub-table {
-        width: 100%;
-        border-collapse: collapse;
+
+      .contact-info strong {
+        color: #667eea;
       }
-      .sub-table td {
-        padding: 10px;
-        border: 1px solid #f0f4ec;
-        color: #5d4037;
+
+      .footer {
+        margin-top: 30px;
+        color: #888;
+        font-size: 14px;
       }
-      .sub-table tr:nth-child(odd) {
-        background-color: #fff8e1;
+
+      .loading-dots {
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+      .loading-dots::after {
+        content: "";
+        animation: dots 2s steps(4, end) infinite;
+      }
+
+      @keyframes dots {
+        0% {
+          content: "";
+        }
+        25% {
+          content: ".";
+        }
+        50% {
+          content: "..";
+        }
+        75% {
+          content: "...";
+        }
+        100% {
+          content: "";
+        }
       }
     </style>
   </head>
   <body>
-    <h1>베스티온 - 학생 학업 진행 상황 (허윤) - 영어</h1>
-    <table>
-      <tr>
-        <th>영어 학습 영역</th>
-        <th>진행률</th>
-        <th>비고</th>
-      </tr>
-      <tr class="category" onclick="toggleDetails('pronunciation')">
-        <td>발음</td>
-        <td>클릭</td>
-        <td>기본 IPA 발음표 습득중</td>
-      </tr>
-      <tr id="pronunciation" class="details">
-        <td colspan="3">
-          <table class="sub-table">
-            <tr>
-              <td>IPA 발음표</td>
-              <td>기본 음소 70% 학습</td>
-              <td>기본 자음/모음 발음 개선 필요</td>
-            </tr>
-            <tr>
-              <td>미국 영어 연음 처리</td>
-              <td>연음 법칙 기본 2% 학습</td>
-              <td>연이어 나오는 자음에서의 음처리 tt ex) went to, want to</td>
-            </tr>
-            <tr>
-              <td>미국 영어 묵음 처리</td>
-              <td>준비중</td>
-              <td>묵음 처리 학습</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="category" onclick="toggleDetails('grammar')">
-        <td>문법</td>
-        <td>클릭</td>
-        <td>초급 단계 집중 학습 중</td>
-      </tr>
-      <tr id="grammar" class="details">
-        <td colspan="3">
-          <table class="sub-table">
-            <tr>
-              <td>기초 문법</td>
-              <td>90% 완료</td>
-              <td>명사/수사 진행중</td>
-            </tr>
-            <tr>
-              <td>중급 문법</td>
-              <td>50% 진행</td>
-              <td>분사 동명사 To부정사 관계사 완료</td>
-            </tr>
-            <tr>
-              <td>고급 문법</td>
-              <td>준비중</td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="category" onclick="toggleDetails('reading')">
-        <td>읽기/단어</td>
-        <td>클릭</td>
-        <td>EBS 중학/고교 소설</td>
-      </tr>
-      <tr id="reading" class="details">
-        <td colspan="3">
-          <table class="sub-table">
-            <tr>
-              <td>EBS 중학 LV4 The Plucky Orangutan</td>
-              <td>100% 진행중 - 10페이지 중 10페이지 완료 - 복습 진행</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>EBS 중학 LV4 - 선정중</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="category" onclick="toggleDetails('writing')">
-        <td>시험</td>
-        <td>클릭</td>
-        <td>IELTS</td>
-      </tr>
-      <tr id="writing" class="details">
-        <td colspan="3">
-          <table class="sub-table">
-            <tr>
-              <td>IELTS</td>
-              <td>1% 진행중</td>
-              <td>시험 유형 및 난이도 소개</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="category" onclick="toggleDetails('Conversation')">
-        <td>회화</td>
-        <td>클릭</td>
-        <td>배운 문법 활용 및 적용</td>
-      </tr>
-      <tr id="Conversation" class="details">
-        <td colspan="3">
-          <table class="sub-table">
-            <tr>
-              <td>Pepa Pig 01 쉐도윙</td>
-              <td>70% 완료</td>
-              <td>배운 문법 적용 및 활용</td>
-            </tr>
-            <tr>
-              <td>수업시간에 배운 내용 원어민과 실제 테스트</td>
-              <td>4회차 원어민 선생님 온라인 수업 완료, 7회차 예약됨</td>
-              <td>7월 3주</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+    <div class="notification-container">
+      <div class="icon">📱</div>
+      <h1>베스티온 학습 리포트 서비스 이전 안내</h1>
 
-    <script>
-      function toggleDetails(categoryId) {
-        var details = document.getElementById(categoryId);
-        if (details.style.display === "table-row") {
-          details.style.display = "none";
-        } else {
-          details.style.display = "table-row";
-        }
-      }
-    </script>
+      <div class="message">
+        <p>
+          <strong class="highlight"
+            >현재 레포트 기능이 베스티온 폴리로그(웹 학습 프로그램)로 이전됨에
+            따라</strong
+          >
+        </p>
+        <p>
+          <strong
+            >추후 자동으로 문자로 수신될 예정입니다<span
+              class="loading-dots"
+            ></span
+          ></strong>
+        </p>
+        <p>잠시만 기다려 주시고, 문의 사항은 개별적으로 연락 부탁드립니다.</p>
+      </div>
+
+      <div class="contact-info">
+        <p><strong>📞 문의사항</strong></p>
+        <p>• 학습 진행 상황 관련 문의</p>
+        <p>• 베스티온 폴리로그 이용 문의</p>
+        <p>• 기타 서비스 관련 문의</p>
+      </div>
+
+      <div class="footer">
+        <p>베스티온 교육 시스템</p>
+        <p>서비스 개선을 위해 노력하고 있습니다.</p>
+      </div>
+    </div>
   </body>
 </html>
